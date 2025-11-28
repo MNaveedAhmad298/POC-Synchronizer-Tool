@@ -9,7 +9,7 @@ namespace MyApp.Data
         {
             var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
             optionsBuilder.UseSqlServer(
-                "Server=192.168.1.100;Database=POC-localDb;User Id=sa;Password=ScenarioERP@7507674;TrustServerCertificate=True;Command Timeout=300;");
+                "YOUR_CONNECTION_STRING_HERE");
 
             return new AppDbContext(optionsBuilder.Options);
         }
