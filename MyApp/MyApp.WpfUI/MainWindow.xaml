@@ -1,0 +1,90 @@
+﻿<Window x:Class="MyApp.WpfUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="User CRUD with Hobbies" Height="500" Width="900">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Add User Panel -->
+        <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+            <TextBox x:Name="NameBox" Width="150" Margin="0 0 10 0" Text="Enter name..." 
+                     GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+            <TextBox x:Name="AgeBox" Width="80" Margin="0 0 10 0" Text="0"
+                     GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+            <Button Content="Add User" Width="80" Click="AddUser_Click"/>
+            <Button Content="Sync Users" Width="100" Margin="10,0,0,0" Click="SyncAll_Click"/>
+        </StackPanel>
+
+        <!-- Users DataGrid -->
+        <DataGrid x:Name="UserGrid"
+                  AutoGenerateColumns="False"
+                  Grid.Row="1"
+                  CanUserAddRows="False"
+                  SelectionChanged="UserGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Age" Binding="{Binding Age}"/>
+                <DataGridTemplateColumn Header="Update">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Update" Click="UpdateUser_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Delete">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Delete" Click="DeleteUser_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Hobbies Panel -->
+        <StackPanel Orientation="Horizontal" Margin="0 10 0 10" Grid.Row="2">
+            <TextBox x:Name="HobbyNameBox" Width="150" Margin="0 0 10 0" Text="Hobby Name..."
+                     GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+            <TextBox x:Name="HobbyDescBox" Width="200" Margin="0 0 10 0" Text="Description..."
+                     GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+            <TextBox x:Name="HobbyLevelBox" Width="120" Margin="0 0 10 0" Text="Proficiency..."
+                     GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+            <Button Content="Add Hobby" Width="80" Click="AddHobby_Click"/>
+        </StackPanel>
+
+        <!-- Hobbies DataGrid -->
+        <DataGrid x:Name="HobbyGrid"
+                  AutoGenerateColumns="False"
+                  Grid.Row="2"
+                  CanUserAddRows="False"
+                  Margin="0,40,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Description" Binding="{Binding Description}"/>
+                <DataGridTextColumn Header="Proficiency" Binding="{Binding ProficiencyLevel}"/>
+                <DataGridTemplateColumn Header="Update">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Update" Click="UpdateHobby_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Delete">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Delete" Click="DeleteHobby_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>
