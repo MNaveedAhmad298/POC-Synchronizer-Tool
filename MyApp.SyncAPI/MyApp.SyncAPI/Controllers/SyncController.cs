@@ -25,10 +25,11 @@ namespace MyApp.SyncAPI.Controllers
             if (request == null || string.IsNullOrWhiteSpace(request.EntityType))
                 return BadRequest("Invalid request.");
 
-            var entityType = Assembly.GetExecutingAssembly()
-                                     .GetTypes()
-                                     .FirstOrDefault(t => t.Namespace == "MyApp.SyncAPI.Models"
-                                                      && t.Name.Equals(request.EntityType, StringComparison.OrdinalIgnoreCase));
+            var entityType = _context.Model
+                .GetEntityTypes()
+                .Select(et => et.ClrType)
+                .FirstOrDefault(t =>
+                    t.Name.Equals(request.EntityType, StringComparison.OrdinalIgnoreCase));
 
             if (entityType == null)
                 return BadRequest($"Entity '{request.EntityType}' does not exist.");

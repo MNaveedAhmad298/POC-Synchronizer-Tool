@@ -12,8 +12,8 @@ using MyApp.Data;
 namespace MyApp.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20251128065418_SeedDataForUserHobbyTable")]
-    partial class SeedDataForUserHobbyTable
+    [Migration("20251129102303_ReSeedUserHobbyData")]
+    partial class ReSeedUserHobbyData
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -137,14 +137,14 @@ namespace MyApp.Data.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = new Guid("64614f8f-5731-442e-b581-aaced7c2741b"),
-                            HobbyId = new Guid("a2311cc1-f0aa-49cf-9adf-927734bf9398"),
-                            CreatedAt = new DateTime(2025, 11, 28, 6, 54, 16, 718, DateTimeKind.Utc).AddTicks(6868),
+                            UserId = new Guid("cf763ac7-7d37-402c-919a-cabf7e1fe9fa"),
+                            HobbyId = new Guid("6d005b97-0d1b-4c17-bc21-050b463be6ec"),
+                            CreatedAt = new DateTime(2025, 11, 29, 10, 23, 2, 462, DateTimeKind.Utc).AddTicks(8137),
                             IsDeleted = false,
                             IsSynced = false,
-                            JoinedAt = new DateTime(2025, 11, 28, 6, 54, 16, 718, DateTimeKind.Utc).AddTicks(6841),
+                            JoinedAt = new DateTime(2025, 11, 29, 10, 23, 2, 462, DateTimeKind.Utc).AddTicks(8106),
                             SkillLevel = "Expert",
-                            UpdatedAt = new DateTime(2025, 11, 28, 6, 54, 16, 718, DateTimeKind.Utc).AddTicks(6869)
+                            UpdatedAt = new DateTime(2025, 11, 29, 10, 23, 2, 462, DateTimeKind.Utc).AddTicks(8138)
                         });
                 });
 

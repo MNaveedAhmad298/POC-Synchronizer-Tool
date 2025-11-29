@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyApp.Data;
 
@@ -11,9 +12,11 @@ using MyApp.Data;
 namespace MyApp.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251129100717_SeedUserHobbyData")]
+    partial class SeedUserHobbyData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -134,14 +137,14 @@ namespace MyApp.Data.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = new Guid("cf763ac7-7d37-402c-919a-cabf7e1fe9fa"),
-                            HobbyId = new Guid("6d005b97-0d1b-4c17-bc21-050b463be6ec"),
-                            CreatedAt = new DateTime(2025, 11, 29, 10, 23, 2, 462, DateTimeKind.Utc).AddTicks(8137),
+                            UserId = new Guid("236fbdbb-6d8d-488b-93e4-7bc61f121ba1"),
+                            HobbyId = new Guid("3d726243-3c45-41d1-8a22-bf3397a6e293"),
+                            CreatedAt = new DateTime(2025, 11, 29, 10, 7, 14, 951, DateTimeKind.Utc).AddTicks(6879),
                             IsDeleted = false,
                             IsSynced = false,
-                            JoinedAt = new DateTime(2025, 11, 29, 10, 23, 2, 462, DateTimeKind.Utc).AddTicks(8106),
+                            JoinedAt = new DateTime(2025, 11, 29, 10, 7, 14, 951, DateTimeKind.Utc).AddTicks(6834),
                             SkillLevel = "Expert",
-                            UpdatedAt = new DateTime(2025, 11, 29, 10, 23, 2, 462, DateTimeKind.Utc).AddTicks(8138)
+                            UpdatedAt = new DateTime(2025, 11, 29, 10, 7, 14, 951, DateTimeKind.Utc).AddTicks(6881)
                         });
                 });
 

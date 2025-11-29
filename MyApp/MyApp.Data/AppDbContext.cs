@@ -61,8 +61,8 @@ namespace MyApp.Data
             modelBuilder.Entity<UserHobby>().HasData(
             new UserHobby
             {
-                UserId = Guid.Parse("64614F8F-5731-442E-B581-AACED7C2741B"),
-                HobbyId = Guid.Parse("A2311CC1-F0AA-49CF-9ADF-927734BF9398"),
+                UserId = Guid.Parse("CF763AC7-7D37-402C-919A-CABF7E1FE9FA"),
+                HobbyId = Guid.Parse("6D005B97-0D1B-4C17-BC21-050B463BE6EC"),
                 SkillLevel = "Expert",
                 IsSynced = false,
                 IsDeleted = false,
